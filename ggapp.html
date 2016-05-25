@@ -75,6 +75,47 @@
 						obj.setCapture&&obj.setCapture();
 						return false;
 					}
+					obj.addEventListener("touchstart",function(ev){
+					  obj.style.zIndex=zIndex++;
+					  clearInterval(obj.timer);
+					  var disX = ev.targetTouches[0].pageX - obj.offsetLeft;
+					  var disY = ev.targetTouches[0].pageY - obj.offsetTop;
+					  function fnMove(ev){ 
+						  obj.style.left = ev.targetTouches[0].pageX - disX + "px";	
+						  obj.style.top = ev.targetTouches[0].pageY - disY + "px";
+						  var nearObj=findNearest(obj);
+						  if(nearObj&&nearObj!=obj){
+							  /*//交换位置
+							  move(nearObj,aPos[obj.index]);	
+							  //交换下标		
+							  var tmp=obj.index;
+							  obj.index=nearObj.index;
+							  nearObj.index=tmp;*/
+							  var n=obj.index;//拖拽着的obj索引
+							  var m=nearObj.index;//被撞的最近obj的索引
+							  for(var i=0;i<aLi.length;i++){
+								  if(aLi[i].index>n&&aLi[i].index<=m){
+									  aLi[i].index--;
+									  move(aLi[i],aPos[aLi[i].index]);
+								  }else if(aLi[i].index<n&&aLi[i].index>=m){
+									  aLi[i].index++;
+									  move(aLi[i],aPos[aLi[i].index]);
+								  }
+							  }
+							  obj.index=m;
+						  }	
+					  }	
+						function fnEnd(){
+							//释放资源
+							obj.removeEventListener("touchmove",fnMove,false);
+							obj.removeEventListener("touchend",fnEnd,false);
+						}
+						
+						obj.addEventListener("touchmove",fnMove,false);
+						obj.addEventListener("touchend",fnEnd,false);
+						
+						ev.preventDefault();
+					},false);
 				}
 				//碰撞检测函数
 				function collTest (obj1,obj2) {
