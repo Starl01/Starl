@@ -69,7 +69,7 @@ width:1px;height:667px;background:#000;position:absolute;left:400px;top:0;z-inde
     width: 100%; float: left;
 }
 }
-.skills{ width:100%; padding-top:90px; padding-bottom:100px; text-align:center; }
+.skills{ padding-top:90px; padding-bottom:100px; text-align:center; }
 .skills .container h3{ font-size:15px; margin-top:10px; margin-bottom:10px; text-transform:uppercase; letter-spacing:1px; font-weight:bold; padding-bottom:30px; text-align:center; background:url(../pics/h1-bg.png) no-repeat center bottom; }
 .skillswrapper{ width:100%; padding-left:5px; padding-right:5px; margin-top:70px;}
 .skillswrapper .skillsdiv{ position: relative; padding-left: 15px; padding-right: 15px; width:350px; }
