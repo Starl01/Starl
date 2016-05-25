@@ -145,8 +145,8 @@
 					}	
 					function fnEnd(){
 						//释放资源
-						oUl.removeEventListener("touchmove",fnMove,false);
-						oUl.removeEventListener("touchend",fnEnd,false);
+						document.removeEventListener("touchmove",fnMove,false);
+						document.removeEventListener("touchend",fnEnd,false);
 						clearInterval(timer);
 						timer=setInterval(function () {
 							x+=speedX;
