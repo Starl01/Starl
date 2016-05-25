@@ -11,10 +11,10 @@ var cHeight=document.documentElement.clientHeight;
 var oSkillswrapper=document.getElementById('skillswrapper');
 var oSkillicon=document.getElementById('skillicon');
 var aSkillsdiv=oSkillswrapper.children;
-aHeroliImg[0].onload=function(){
+setTimeout(function(){
 	oHeadNav.style.width='180px';	
 	oHeadNav.style.left='300px';
-};
+},100);
 var Skillswrappertop=getPos(oSkillswrapper).top;
 //alert(Skillswrappertop)
 
