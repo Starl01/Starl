@@ -128,6 +128,49 @@
 					};
 					return false;	
 				};
+				oUl.addEventListener("touchstart",function(ev){
+					clearInterval(timer);
+					var disX = ev.targetTouches[0].pageX - y;
+					var disY = ev.targetTouches[0].pageY - x;
+					function fnMove(ev){ 
+						y= ev.targetTouches[0].pageX-disX;
+						x= ev.targetTouches[0].pageY-disY;
+						speedX=x-lastX;
+						speedY=y-lastY;
+						lastX=x;
+						lastY=y;
+						if(x>600) x=600;
+						if(x<-600) x=-600;
+						oUl.style.transform='perspective(800px) rotateX('+-x/10+'deg) rotateY('+y/10+'deg) ';
+					}	
+					function fnEnd(){
+						//释放资源
+						oUl.removeEventListener("touchmove",fnMove,false);
+						oUl.removeEventListener("touchend",fnEnd,false);
+						clearInterval(timer);
+						timer=setInterval(function () {
+							x+=speedX;
+							y+=speedY;
+							speedX*=0.96;
+							speedY*=0.96;
+							if(Math.abs(speedX)<1){
+								speedX=0;
+							}
+							if(Math.abs(speedY)<1){
+								speedY=0;
+							}
+							if(speedX==0&&speedY==0){
+								clearInterval(timer);
+							}
+							oUl.style.transform='perspective(800px) rotateX('+-x/10+'deg) rotateY('+y/10+'deg) ';
+						},30)
+					}
+						
+					document.addEventListener("touchmove",fnMove,false);
+					document.addEventListener("touchend",fnEnd,false);
+					
+					ev.preventDefault();
+				},false);
 			};
 		</script>
 	</head>
