@@ -31,6 +31,29 @@
 					
 					oT.style.textShadow=x+'px '+y+'px '+blur/40+'px #000';
 				};
+				document.addEventListener("touchstart",function(ev){
+				  function fnMove(ev){ 
+					  oSun.style.left= ev.targetTouches[0].pageX-oSun.offsetWidth/2+'px';
+					  oSun.style.top= ev.targetTouches[0].pageY-oSun.offsetHeight/2+'px';
+					  var x1=ev.targetTouches[0].pageX-oSun.offsetWidth/2;
+					  var y1=ev.targetTouches[0].pageY-oSun.offsetHeight/2;
+					  var x2=oT.offsetLeft+oT.offsetWidth/2;
+					  var y2=oT.offsetTop+oT.offsetHeight/2;
+					  var x=(x2-x1)/2;
+					  var y=(y2-y1)/2;
+					  var blur=Math.sqrt(x*x+y*y);
+					  oT.style.textShadow=x+'px '+y+'px '+blur/40+'px #000';	
+				  }	
+				  function fnEnd(){
+					  //释放资源
+					  document.removeEventListener("touchmove",fnMove,false);
+					  document.removeEventListener("touchend",fnEnd,false);
+				  }
+					document.addEventListener("touchmove",fnMove,false);
+					document.addEventListener("touchend",fnEnd,false);
+					
+					ev.preventDefault();
+				},false);
 			};
 		</script>
 	</head>
