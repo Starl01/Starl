@@ -15,6 +15,7 @@ function getPos(obj){
 function a2r(ang) {
 	return ang * Math.PI / 180;
 }
+var oSkillswrapper=document.getElementById('skillswrapper');
 var Skillswrappertop=getPos(oSkillswrapper).top;
 window.onload=function(){
 //homeliclick
