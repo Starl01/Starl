@@ -20,6 +20,7 @@ em{ font-style:normal; }
 .fl{ float:left; display:inline; }
 .fr{ float:right; display:inline; }
 .text-align{ text-align:center; }
+header,section,footer{ width:1366px; }
 .container{ width: 1140px; margin-right: auto; margin-left: auto; padding-left: 15px; padding-right: 15px; overflow:hidden; }
 .wp2,.wp3,.wp4,.wp5{ visibility:hidden; }
 .fadeInUp,.fadeInDown{ visibility: visible; }
@@ -58,23 +59,6 @@ p {
     line-height: 25px;
     font-size: 14px;
 }
-@media (min-width: 768px){
-.container {
-    width: 750px;
-}
-}
-@media (min-width: 992px){
-.container {
-    width: 970px;
-}
-}
-
-@media (min-width: 1200px){
-.container {
-    width: 1170px;
-}
-}
-
 @-webkit-keyframes fadeInUp {
   0% {
     opacity: 0;
