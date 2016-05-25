@@ -22,6 +22,11 @@ em{ font-style:normal; }
 .text-align{ text-align:center; }
 header,section,footer{ width:1366px; }
 .container{ width: 1140px; margin-right: auto; margin-left: auto; padding-left: 15px; padding-right: 15px; overflow:hidden; }
+@media (min-width: 1200px){
+.container {
+    width: 1170px;
+}
+}
 .wp2,.wp3,.wp4,.wp5{ visibility:hidden; }
 .fadeInUp,.fadeInDown{ visibility: visible; }
 .fadeInUp{ animation-name: fadeInUp; }
