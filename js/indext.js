@@ -15,6 +15,16 @@ function getPos(obj){
 function a2r(ang) {
 	return ang * Math.PI / 180;
 }
+var oHero=document.getElementById('hero');
+var oHeropicul=oHero.getElementsByTagName('ul')[0];
+var aHeropiculli=oHeropicul.children;
+var oHeroLeft=document.getElementById('heroleft');
+var oHeroRight=document.getElementById('heroright');
+var oHeadNav=document.getElementById('home').getElementsByTagName('nav')[0];
+var aHeroliImg=oHeropicul.getElementsByTagName('img');
+var cHeight=document.documentElement.clientHeight;
+var oSkillicon=document.getElementById('skillicon');
+var aSkillsdiv=oSkillswrapper.children;
 var oSkillswrapper=document.getElementById('skillswrapper');
 var Skillswrappertop=getPos(oSkillswrapper).top;
 window.onload=function(){
