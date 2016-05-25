@@ -106,9 +106,9 @@
 						  }	
 					  }	
 						function fnEnd(){
-							//释放资源
 							obj.removeEventListener("touchmove",fnMove,false);
 							obj.removeEventListener("touchend",fnEnd,false);
+							move(obj,aPos[obj.index]);
 						}
 						
 						obj.addEventListener("touchmove",fnMove,false);
