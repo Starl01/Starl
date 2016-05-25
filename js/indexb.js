@@ -8,7 +8,6 @@ var oHeroRight=document.getElementById('heroright');
 var oHeadNav=document.getElementById('home').getElementsByTagName('nav')[0];
 var aHeroliImg=oHeropicul.getElementsByTagName('img');
 var cHeight=document.documentElement.clientHeight;
-var oSkillswrapper=document.getElementById('skillswrapper');
 var oSkillicon=document.getElementById('skillicon');
 var aSkillsdiv=oSkillswrapper.children;
 aHeroliImg[0].onload=function(){
