@@ -15,9 +15,6 @@ aHeroliImg[0].onload=function(){
 	oHeadNav.style.width='180px';	
 	oHeadNav.style.left='300px';
 };
-var Skillswrappertop=getPos(oSkillswrapper).top;
-//alert(Skillswrappertop)
-
 //skillsclick
 var arr=["ajax、jsonp","mvc","html5、css3","canvas","seajs","php、nodejs","git、svn","grunt、gulp"];
 var oDiv = document.getElementById('mskillsdiv');
