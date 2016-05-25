@@ -63,6 +63,6 @@ window.onscroll=function(){
 		 }
 	}
 	if(scrTop+cHeight>getPos(oMename).top){
-		oTeamleaderwp5.children[0].className='col-md-4 wp5 delay-05s animated fadeInUp';
+		oTeamleaderwp5.className='col-md-4 wp5 delay-05s animated fadeInUp';
 	}
 }
